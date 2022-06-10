@@ -1,5 +1,59 @@
 from posixpath import split
 import requests
+import csv
+
+
+
+
+def init_cpus():
+    dict={}
+    with open('CPUv4.csv') as csv_file:
+        csv_reader = csv.reader(csv_file, delimiter=',')
+        line_count = 0
+        for row in csv_reader:
+            if line_count == 0:
+                print(f'Column names are {", ".join(row)}')
+                line_count += 1
+            else:
+                try:
+                    print(f'\t'+str([row[0],row[2],row[9],row[11]]))
+                    line_count += 1
+                    dict[row[0]]=[row[2],row[9],row[11]]
+
+                except:
+                    print(row)
+                    pass
+        print(f'Processed {line_count} lines.')
+    print("len="+str(len(dict)))
+    return dict
+
+def init_gpus():
+    dict={}
+    with open('GPUv7.csv') as csv_file:
+        csv_reader = csv.reader(csv_file, delimiter=',')
+        line_count = 0
+        for row in csv_reader:
+            if line_count == 0:
+                print(f'Column names are {", ".join(row)}')
+                line_count += 1
+            else:
+                try:
+                    print(f'\t'+str([row[0],row[1],row[7],row[8]]))
+                    line_count += 1
+                    dict[row[0]]=[row[1],row[7],row[8]]
+
+                except:
+                    print(row)
+                    pass
+        print(f'Processed {line_count} lines.')
+    print("len="+str(len(dict)))
+    return dict
+
+
+
+
+
+
 def get_score():
     return 1000
 
