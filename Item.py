@@ -3,6 +3,29 @@ import requests
 def get_score():
     return 1000
 
+def get_gpu_mark(arg):
+    argv=arg.split(" ")
+    s=""
+    for i in argv:
+        s=s+i+"+"
+    #AMD+Ryzen+3+3100
+    s=s[:-1]
+    x = requests.get('https://www.videocardbenchmark.net/video_lookup.php?gpu=GeForce+GTX+1070')
+
+    #print(x.text)
+    html=x.text
+    #start=html.find("Average G3D Mark")
+    #html=html[start:]
+    print(html)
+    end=html.find("Single Thread Rating")
+    html=html[:end]
+    start=html.find("color")
+    html=html[start:]
+    start=html.find(">")
+    end=html.find("<")
+    html=html[start+1:end]
+    #print(html[:end])
+
 def get_cpu_mark(arg):
     argv=arg.split(" ")
     s=""
