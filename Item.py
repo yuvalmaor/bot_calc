@@ -4,7 +4,13 @@ import csv
 
 
 
+def cpu_prices():
+    return 0
+    pass
 
+def gpu_prices():
+    return 0
+    pass
 def init_cpus():
     dict={}
     with open('CPUv4.csv') as csv_file:

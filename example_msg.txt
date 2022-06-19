@@ -1,0 +1,8 @@
+pc
+cpu:AMD Ryzen 3 3100
+gpu:GeForce RTX 3060
+discs:
+ssd:500gb
+hdd:1000gb
+hdd:4000gb
+
