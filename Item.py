@@ -3,14 +3,37 @@ import requests
 import csv
 
 
-
+def get_linear_value(a,b,c):
+    pass
 def cpu_prices():
-    return 0
+    prices={}
+    prices["i9-12900KF"]=[41163,2500]
+
+    prices["i7-12700KF"]=[34110,1800]
+
+    prices["i5-12600KF"]=[27186,1200]
+
+    prices["i3-12300"]=[14955,650]
+    prices["Pentium Gold G7400"]=[6896,350]
+
+    return prices
     pass
 
 def gpu_prices():
-    return 0
+    prices={}
+    prices["3060"]=[16958,1700]
+    prices["3060ti"]=[20206,1900]
+    prices["3070"]=[22093,2000]
+
+    prices["3070ti"]=[23367,2000]
+    prices["3080"]=[24853,3100]
+    prices["3080ti"]=[26887,4500]
+    prices["3090ti"]=[29094,7000]
+    return prices
     pass
+#get cpu data
+
+
 def init_cpus():
     dict={}
     with open('CPUv4.csv') as csv_file:

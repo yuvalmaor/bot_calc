@@ -17,28 +17,12 @@ d=data.Data()
 # context. Error handlers also receive the raised TelegramError object in error.
 def start(update: Update, context: CallbackContext) -> None:
     """Send a message when the command /start is issued."""
-    update.message.reply_text('היי לשימוש בבוט יש להשתמש בפורמט הבא:')
+    update.message.reply_text('Hi!')
 
 
 def help_command(update: Update, context: CallbackContext) -> None:
     """Send a message when the command /help is issued."""
-    s="היי לשימוש בבוט יש להשתמש בפורמט הבא:"
-    s=s+""
-    update.message.reply_text(s)
-    """cpu:i7-4770K
-        gpu:1070
-        ram:16gb ddr3
-        discs:
-        ssd:200gb"""
-    s="cpu:[cpu model]\n"
-    s=s+"gpu:[gpu model]\n"
-    s=s+"ram:[ram amount] [ram generation]\n"
-    
-    s=s+"[drive 1 type]:[drive 1 size]\n"
-    s=s+"[drive 2 type]:[drive 2 size]\n"
-    s=s+"..."
-
-    update.message.reply_text(s)
+    update.message.reply_text('Help!')
 
 def filesfunc(update: Update, context: CallbackContext) -> None:
     global files
@@ -70,7 +54,7 @@ def echo(update: Update, context: CallbackContext) -> None:
                 update.message.reply_document(i)
         else:
             if(t[:3]=="cpu"):
-                update.message.reply_text(""+d.handel_msg(t))
+                update.message.reply_text("calculating value\n"+d.handel_msg(t))
                 #update.message.reply_text(d.handel_msg(t))
             else:
                 pass
@@ -133,14 +117,14 @@ def main():
     # Create the Updater and pass it your bot's token.
     # Make sure to set use_context=True to use the new context based callbacks
     # Post version 12 this will no longer be necessary
-    updater = Updater("5564814911:AAGolfu4Ertp7xE-QgNhl7mWrZvQIa87H3U", use_context=True)
+    updater = Updater("5429391137:AAE-UWlAUGFQL5dWWMfkc3QhFS5nreAZ8zM", use_context=True)
 
     # Get the dispatcher to register handlers
     dispatcher = updater.dispatcher
 
     # on different commands - answer in Telegram
     #dispatcher.add_handler(CommandHandler("start", start))
-    dispatcher.add_handler(CommandHandler("help", help_command))
+    #dispatcher.add_handler(CommandHandler("help", help_command))
     #dispatcher.add_handler(CommandHandler("files", filesfunc))
 
     # on noncommand i.e message - echo the message on Telegram
