@@ -33,7 +33,7 @@ def help_command(update: Update, context: CallbackContext) -> None:
     s="cpu:[cpu model]\n"
     s=s+"gpu:[gpu model]\n"
     s=s+"ram:[ram amount] [ram generation]\n"
-    
+
     s=s+"[drive 1 type]:[drive 1 size]\n"
     s=s+"[drive 2 type]:[drive 2 size]\n"
     s=s+"..."

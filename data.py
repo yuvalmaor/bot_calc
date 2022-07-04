@@ -267,6 +267,6 @@ class Data:
         pass
     def get_new_hdd_value(self,hdd):
         a=int(hdd[:-2])
-        num=(a/500)*45
+        num=(a/500)*43
         return num
         pass    
